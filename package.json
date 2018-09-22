@@ -1,0 +1,38 @@
+{
+  "name": "filipandersson245.github.io",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development",
+    "start-production": "webpack --mode=production",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FilipAndersson245/FilipAndersson245.github.io.git"
+  },
+  "author": "Filip Andersson",
+  "license": "apache2",
+  "bugs": {
+    "url": "https://github.com/FilipAndersson245/FilipAndersson245.github.io/issues"
+  },
+  "homepage": "https://github.com/FilipAndersson245/FilipAndersson245.github.io#readme",
+  "dependencies": {
+    "@material-ui/core": "^3.1.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^16.0.7",
+    "@types/webpack": "^4.4.12",
+    "awesome-typescript-loader": "^5.2.1",
+    "ts-loader": "^5.1.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8",
+    "webpack-hot-middleware": "^2.24.2"
+  }
+}
