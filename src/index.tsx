@@ -1,7 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { App } from "./app";
+import { MemoryRouter } from "react-router";
 
-const name = "Hello world!";
-const element = <h1>Hello, {name}</h1>;
-
-ReactDOM.render(element, document.getElementById("root"));
+ReactDOM.render(
+  <MemoryRouter>
+    <App />
+  </MemoryRouter>,
+  document.getElementById("root")
+);

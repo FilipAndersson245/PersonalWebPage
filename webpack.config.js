@@ -37,6 +37,11 @@ module.exports = {
     overlay: true
   },
   devtool: "source-map",
+  optimization: {
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
+    splitChunks: false
+  },
 
   plugins: [
     new CheckerPlugin(),
