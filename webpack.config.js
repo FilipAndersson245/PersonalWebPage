@@ -54,8 +54,8 @@ const config = {
       automaticNameDelimiter: "~",
       name: true,
       cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
+        reactAndMaterial: {
+          test: /[\\/]node_modules[\\/](react|react-dom|@material-ui)[\\/]/,
           priority: -10
         },
         default: {
