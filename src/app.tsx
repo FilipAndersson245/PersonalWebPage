@@ -1,10 +1,12 @@
 import React from "react";
 import { Header } from "./components/header";
-import { Route } from "react-router-dom";
+import { Layout } from "./components/layout";
+import { CssBaseline } from "@material-ui/core";
 
 export const App = () => (
   <div>
+    <CssBaseline />
     <Header />
-    <Route path="/" />
+    <Layout />
   </div>
 );

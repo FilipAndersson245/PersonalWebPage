@@ -4,7 +4,7 @@ import React from "react";
 
 export const Header = () => (
   <div>
-    <AppBar color="primary">
+    <AppBar color="primary" position="relative">
       <Toolbar variant="dense">
         <IconButton color="inherit">
           <Home>Home</Home>

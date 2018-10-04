@@ -1,11 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { App } from "./app";
-import { MemoryRouter } from "react-router";
+import { HashRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <MemoryRouter>
+  <HashRouter>
     <App />
-  </MemoryRouter>,
+  </HashRouter>,
   document.getElementById("root")
 );
