@@ -25,20 +25,6 @@ const config = {
     filename: "bundle.js",
     publicPath: "/"
   },
-  devServer: {
-    contentBase: path.join(__dirname, "src"),
-    host: "0.0.0.0",
-    port: 3000,
-
-    stats: {
-      assets: false,
-      hash: false,
-      chunks: false,
-      errors: true,
-      errorDetails: true
-    },
-    overlay: true
-  },
 
   optimization: {
     removeAvailableModules: false,
@@ -72,12 +58,25 @@ const config = {
 
 module.exports = (env, argv) => {
   if (argv.mode === "production") {
-    config.optimization.minimize = true;
     config.devtool = "source-map";
-    config.plugins.push(new BundleAnalyzerPlugin());
+    config.watch = false;
   } else if (argv.mode === "development") {
     config.devtool = "eval";
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    config.devServer = {
+      contentBase: path.join(__dirname, "src"),
+      host: "0.0.0.0",
+      port: 3000,
+
+      stats: {
+        assets: false,
+        hash: false,
+        chunks: false,
+        errors: true,
+        errorDetails: true
+      },
+      overlay: true
+    };
   }
   return config;
 };
