@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const { CheckerPlugin } = require("awesome-typescript-loader");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   entry: "./src/index.tsx",
@@ -23,7 +24,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/"
+    publicPath: "./"
   },
 
   optimization: {
@@ -53,7 +54,11 @@ const config = {
     }
   },
 
-  plugins: [new CheckerPlugin(), new webpack.NoEmitOnErrorsPlugin()]
+  plugins: [
+    new CheckerPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new HtmlWebpackPlugin({ template: "src/index.html" })
+  ]
 };
 
 module.exports = (env, argv) => {
