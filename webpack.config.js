@@ -59,7 +59,9 @@ const config = {
     new CheckerPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new WebpackManifestPlugin(),
-    new HtmlWebpackPlugin({ template: "src/index.html" })
+    new HtmlWebpackPlugin({
+      template: "src/index.html"
+    })
   ]
 };
 
@@ -69,6 +71,7 @@ module.exports = (env, argv) => {
     config.watch = false;
   } else if (argv.mode === "development") {
     config.devtool = "eval";
+    config.output.publicPath = "/";
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
     config.devServer = {
       contentBase: path.join(__dirname, "src"),
