@@ -1,0 +1,18 @@
+{
+  "name": "Personal website",
+  "short_name": "Personal website",
+  "display": "standalone",
+  "start_url": ".",
+  "background_color": "#FFFFFF",
+  "theme_color": "#3F51B5",
+  "descriptions": "A personal website",
+  "prefer_related_applications": false,
+  "lang": "sv",
+  "main.js": "./bundle.js",
+  "main.js.map": "./bundle.js.map",
+  "vendors~main.js": "./1.bundle.js",
+  "vendors~main.js.map": "./1.bundle.js.map",
+  "index.html": "./index.html",
+  "precache-manifest.dad2e7d79aa988dc4c3494b891dc9c18.js": "./precache-manifest.dad2e7d79aa988dc4c3494b891dc9c18.js",
+  "service-worker.js": "./service-worker.js"
+}
