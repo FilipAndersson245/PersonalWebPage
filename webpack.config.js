@@ -4,6 +4,9 @@ const { CheckerPlugin } = require("awesome-typescript-loader");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WebpackManifestPlugin = require("webpack-manifest-plugin");
+const { GenerateSW } = require("workbox-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const config = {
   entry: "./src/index.tsx",
@@ -57,7 +60,23 @@ const config = {
   plugins: [
     new CheckerPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new HtmlWebpackPlugin({ template: "src/index.html" })
+    new WebpackManifestPlugin({
+      seed: {
+        name: "Personal website",
+        short_name: "Personal website",
+        display: "standalone",
+        start_url: ".",
+        background_color: "#FFFFFF",
+        theme_color: "#3F51B5",
+        descriptions: "A personal website",
+        prefer_related_applications: false,
+        lang: "sv"
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: "src/index.html"
+    }),
+    new GenerateSW()
   ]
 };
 
@@ -65,8 +84,10 @@ module.exports = (env, argv) => {
   if (argv.mode === "production") {
     config.devtool = "source-map";
     config.watch = false;
+    config.plugins.push(new CleanWebpackPlugin(["dist"]));
   } else if (argv.mode === "development") {
     config.devtool = "eval";
+    config.output.publicPath = "/";
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
     config.devServer = {
       contentBase: path.join(__dirname, "src"),
