@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
   <meta name="theme-color" content="#4285F4">
-  <link rel="manifest" href="./manifest.json">
+
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
+  <% if (process.env.NODE_ENV === 'production') { %>
+  <link rel="manifest" href="./manifest.json">
   <script>
     // Check that service workers are registered
     if ('serviceWorker' in navigator) {
@@ -19,6 +21,8 @@
       });
     }
   </script>
+  <% } %>
+
 </head>
 
 <body>
