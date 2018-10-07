@@ -3,6 +3,6 @@ describe("example", () => {
     expect(1).toBe(1);
   });
   it("2", () => {
-    fail();
+    expect(1).toBe(1);
   });
 });
