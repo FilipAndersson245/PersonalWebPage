@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import { Home } from "./home";
 import { About } from "./about";
-import { Error } from "./error";
+import { ErrorPage } from "./ErrorPage";
 import { blog } from "./blog";
 
 export const Layout = () => {
@@ -14,7 +14,7 @@ export const Layout = () => {
         <Route path="/about" component={About} />
         <Route path="/blog" exact component={blog} />
         <Route path="/blog/:hash" exact component={blog} />
-        <Route component={Error} />
+        <Route component={ErrorPage} />
       </Switch>
     </div>
   );

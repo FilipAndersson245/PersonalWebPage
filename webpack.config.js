@@ -63,23 +63,10 @@ const config = {
   plugins: [
     new CheckerPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new WebpackManifestPlugin({
-      seed: {
-        name: "Personal website",
-        short_name: "Personal website",
-        display: "standalone",
-        start_url: ".",
-        background_color: "#FFFFFF",
-        theme_color: "#3F51B5",
-        descriptions: "A personal website",
-        prefer_related_applications: false,
-        lang: "sv"
-      }
-    }),
+
     new HtmlWebpackPlugin({
       template: "src/index.html"
-    }),
-    new GenerateSW()
+    })
   ]
 };
 
@@ -87,7 +74,23 @@ module.exports = (env, argv) => {
   if (argv.mode === "production") {
     config.devtool = "source-map";
     config.watch = false;
-    config.plugins.push(new CleanWebpackPlugin(["dist"]));
+    config.plugins.push(
+      new CleanWebpackPlugin(["dist"]),
+      new WebpackManifestPlugin({
+        seed: {
+          name: "Personal website",
+          short_name: "Personal website",
+          display: "standalone",
+          start_url: ".",
+          background_color: "#FFFFFF",
+          theme_color: "#3F51B5",
+          descriptions: "A personal website",
+          prefer_related_applications: false,
+          lang: "sv"
+        }
+      }),
+      new GenerateSW()
+    );
   } else if (argv.mode === "development") {
     config.devtool = "eval";
     config.output.publicPath = "/";
