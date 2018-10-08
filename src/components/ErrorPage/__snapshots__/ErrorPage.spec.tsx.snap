@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`styling should be centerd 1`] = `
+<div
+  className="MuiGrid-container-1 MuiGrid-justify-xs-center-18"
+>
+  <div
+    className="MuiGrid-item-2 MuiGrid-grid-sm-6-49"
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h1
+      className="MuiTypography-root-98 MuiTypography-display4-99 MuiTypography-gutterBottom-116"
+    >
+      404 Page not found
+    </h1>
+    <h3
+      className="MuiTypography-root-98 MuiTypography-subheading-105"
+    >
+      The page could not be found this may be because the page dosent exist or something is broken on the developers side.
+    </h3>
+  </div>
+</div>
+`;
