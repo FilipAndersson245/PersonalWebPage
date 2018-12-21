@@ -94,8 +94,11 @@ module.exports = (env, argv) => {
     );
   } else if (argv.mode === "development") {
     config.devtool = "eval";
+
     config.output.publicPath = "/";
-    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    config.plugins.push(
+      new webpack.HotModuleReplacementPlugin({ multiStep: true })
+    );
     config.devServer = {
       contentBase: path.join(__dirname, "src"),
       host: "0.0.0.0",

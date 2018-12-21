@@ -1,3 +1,3 @@
 import React from "react";
 
-export const blog = () => <div>Blog</div>;
+export const Blog = () => <div>Blog</div>;

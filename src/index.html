@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      as="stylesheet"
+      type="text/css"
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+    />
+    <meta name="theme-color" content="#4285F4" />
+    <meta
+      name="Description"
+      content="A website for personal projects and online resume for Filip Andersson"
+    />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <% if (process.env.NODE_ENV === 'production') { %>
+    <link rel="manifest" href="./manifest.json" />
+    <script>
+      // Check that service workers are registered
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./service-worker.js");
+        });
+      }
+    </script>
+    <% } %>
+  </head>
 
-<head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preload" as="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-  <meta name="theme-color" content="#4285F4">
-
-  <title>
-    <%= htmlWebpackPlugin.options.title %>
-  </title>
-  <% if (process.env.NODE_ENV === 'production') { %>
-  <link rel="manifest" href="./manifest.json">
-  <script>
-    // Check that service workers are registered
-    if ('serviceWorker' in navigator) {
-      // Use the window load event to keep the page load performant
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js');
-      });
-    }
-  </script>
-  <% } %>
-
-</head>
-
-<body>
-  <div id="root"></div>
-  <noscript>This webpage require JavaScript enabled to function.</noscript>
-</body>
-
+  <body>
+    <div id="root"></div>
+    <noscript>This webpage require JavaScript enabled to function.</noscript>
+  </body>
 </html>
