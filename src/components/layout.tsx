@@ -4,15 +4,10 @@ import { Home } from "./home";
 import { About } from "./about";
 import { Blog } from "./blog";
 import ErrorPage from "./ErrorPage";
-import Loader from "./Loader";
 
 export const Layout = () => {
-  // console.log("");
   return (
     <div>
-      <Loader />
-      <Loader />
-      <Loader />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
