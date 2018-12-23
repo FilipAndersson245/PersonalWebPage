@@ -1,3 +1,5 @@
+import React from "react";
+
 import AppBar from "@material-ui/core/AppBar";
 import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -5,7 +7,6 @@ import Typography from "@material-ui/core/Typography";
 
 import Home from "@material-ui/icons/Home";
 import Menu from "@material-ui/icons/Menu";
-import React from "react";
 
 export const Header = () => (
   <div>

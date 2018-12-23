@@ -26,13 +26,17 @@
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-    "react-spinners": "^0.4.8"
+    "react-spinners": "^0.4.8",
+    "redux": "^4.0.1",
+    "ts-exhaustive-check": "^1.0.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "@types/react": "^16.7.17",
     "@types/react-dom": "^16.0.11",
+    "@types/react-redux": "^6.0.11",
     "@types/react-router-dom": "^4.3.1",
     "@types/react-test-renderer": "^16.0.3",
     "@types/webpack": "^4.4.21",
