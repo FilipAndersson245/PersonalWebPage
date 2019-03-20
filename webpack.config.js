@@ -96,9 +96,7 @@ module.exports = (env, argv) => {
     config.devtool = "eval";
 
     config.output.publicPath = "/";
-    config.plugins.push(
-      new webpack.HotModuleReplacementPlugin({ multiStep: true })
-    );
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
     config.devServer = {
       contentBase: path.join(__dirname, "src"),
       host: "0.0.0.0",
@@ -111,7 +109,8 @@ module.exports = (env, argv) => {
         errors: true,
         errorDetails: true
       },
-      overlay: true
+      overlay: true,
+      hot: true
     };
   }
   return config;
