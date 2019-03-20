@@ -12,7 +12,8 @@
   "main.js.map": "./bundle.js.map",
   "vendors~main.js": "./1.bundle.js",
   "vendors~main.js.map": "./1.bundle.js.map",
+  "fav.ico": "./fav.ico",
   "index.html": "./index.html",
-  "precache-manifest.89be20277c13ed00f57f435f0449255c.js": "./precache-manifest.89be20277c13ed00f57f435f0449255c.js",
+  "precache-manifest.5d39494d0eeeb2d936c643dbffd1ad12.js": "./precache-manifest.5d39494d0eeeb2d936c643dbffd1ad12.js",
   "service-worker.js": "./service-worker.js"
 }
