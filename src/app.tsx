@@ -4,9 +4,9 @@ import { Layout } from "./components/layout";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 export const App = () => (
-  <div>
+  <>
     <CssBaseline />
     <Header />
     <Layout />
-  </div>
+  </>
 );

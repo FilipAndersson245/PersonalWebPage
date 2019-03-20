@@ -8,20 +8,33 @@ import Menu from "@material-ui/icons/Menu";
 import React from "react";
 import to from "../helpers/to";
 
-export const Header = () => (
-  <div>
+import { withRouter } from "react-router";
+
+const navOptions = ["about", "blog", ""];
+
+export const Header = withRouter((props) => {
+  const pathName = props.location.pathname.substring(1).split("/")[0];
+  const navTitle = navOptions.includes(pathName) ? pathName : "error";
+  const formatedNavTitle = navTitle.charAt(0).toUpperCase() + navTitle.slice(1); // capitalize first char
+  document.title = formatedNavTitle || "Filip Andersson website";
+  return (
     <AppBar color="primary" position="relative">
       <Toolbar variant="dense">
-        <IconButton {...to("/")} color="inherit">
-          <Home>Home</Home>
-        </IconButton>
-        <Typography variant="title" color="inherit" style={{ flexGrow: 1 }}>
-          News
-        </Typography>
         <IconButton color="inherit">
           <Menu>Menu</Menu>
         </IconButton>
+        <Typography
+          variant="title"
+          color="inherit"
+          style={{ flexGrow: 1, marginLeft: "1em" }}
+        >
+          {formatedNavTitle}
+        </Typography>
+
+        <IconButton {...to("/")} color="inherit">
+          <Home>Home</Home>
+        </IconButton>
       </Toolbar>
     </AppBar>
-  </div>
-);
+  );
+});
