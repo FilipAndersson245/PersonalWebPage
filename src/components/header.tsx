@@ -18,23 +18,25 @@ export const Header = withRouter((props) => {
   const formatedNavTitle = navTitle.charAt(0).toUpperCase() + navTitle.slice(1); // capitalize first char
   document.title = formatedNavTitle || "Filip Andersson website";
   return (
-    <AppBar color="primary" position="relative">
-      <Toolbar variant="dense">
-        <IconButton color="inherit">
-          <Menu>Menu</Menu>
-        </IconButton>
-        <Typography
-          variant="title"
-          color="inherit"
-          style={{ flexGrow: 1, marginLeft: "1em" }}
-        >
-          {formatedNavTitle}
-        </Typography>
+    <nav>
+      <AppBar color="primary" position="relative">
+        <Toolbar variant="dense">
+          <IconButton color="inherit">
+            <Menu>Menu</Menu>
+          </IconButton>
+          <Typography
+            variant="title"
+            color="inherit"
+            style={{ flexGrow: 1, marginLeft: "1em" }}
+          >
+            {formatedNavTitle}
+          </Typography>
 
-        <IconButton {...to("/")} color="inherit">
-          <Home>Home</Home>
-        </IconButton>
-      </Toolbar>
-    </AppBar>
+          <IconButton {...to("/")} color="inherit">
+            <Home>Home</Home>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    </nav>
   );
 });
