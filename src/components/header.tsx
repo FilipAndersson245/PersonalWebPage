@@ -4,7 +4,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 
 import Home from "@material-ui/icons/Home";
-import Menu from "@material-ui/icons/Menu";
+import Book from "@material-ui/icons/Book";
+// import Menu from "@material-ui/icons/Menu";
 import React from "react";
 import to from "../helpers/to";
 
@@ -21,9 +22,14 @@ export const Header = withRouter((props) => {
     <nav>
       <AppBar color="primary" position="relative">
         <Toolbar variant="dense">
-          <IconButton color="inherit">
-            <Menu>Menu</Menu>
+          <IconButton {...to("/")} color="inherit">
+            <Home>Home</Home>
           </IconButton>
+
+          <IconButton {...to("/blog")} color="inherit">
+            <Book>Book</Book>
+          </IconButton>
+
           <Typography
             variant="title"
             color="inherit"
@@ -31,10 +37,6 @@ export const Header = withRouter((props) => {
           >
             {formatedNavTitle}
           </Typography>
-
-          <IconButton {...to("/")} color="inherit">
-            <Home>Home</Home>
-          </IconButton>
         </Toolbar>
       </AppBar>
     </nav>

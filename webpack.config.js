@@ -40,7 +40,7 @@ const config = {
     splitChunks: {
       chunks: "all",
       minSize: 30000,
-      maxSize: 0,
+      maxSize: 400000, // 0
       minChunks: 1,
       maxAsyncRequests: 5,
       maxInitialRequests: 3,
@@ -71,7 +71,7 @@ const config = {
   ]
 };
 
-module.exports = (env, argv) => {
+module.exports = (_env, argv) => {
   if (argv.mode === "production") {
     config.devtool = "source-map";
     config.watch = false;
@@ -91,6 +91,7 @@ module.exports = (env, argv) => {
         }
       }),
       new GenerateSW()
+      // new BundleAnalyzerPlugin()
     );
   } else if (argv.mode === "development") {
     config.devtool = "eval";
